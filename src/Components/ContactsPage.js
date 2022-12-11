@@ -11,3 +11,4 @@ export default class ContactsPage extends React.Component{
     </div>
   );}
 };
+   
