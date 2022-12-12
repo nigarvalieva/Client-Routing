@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import AboutPage from "./Components/AboutPage";
 import ContactsPage from "./Components/ContactsPage"
@@ -26,26 +26,22 @@ export default class App extends React.Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link to="/about">О нас</Link>
+                  <Link to="/AboutPage">О нас</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/contacts">Контакты</Link>
+                  <Link to="/ContactsPage">Контакты</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="works">Наша команда</Link>
+                  <Link to="/Team">Наша команда</Link>
                 </li>
               </ul>
             </div>
           </nav>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/contacts">
-            <ContactsPage />
-          </Route>
-          <Route path="/works">
-            <Team />
-          </Route>
+          <Routes>
+            <Route path="/AboutPage" element={<AboutPage/>}></Route>
+            <Route path="ContactsPage" element={<ContactsPage/>}></Route>
+            <Route path="/Team" element={<Team/>}></Route>
+          </Routes>
         </div>
       </BrowserRouter>
     );
